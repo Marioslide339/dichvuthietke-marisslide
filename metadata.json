@@ -1,0 +1,6 @@
+{
+  "name": "Maris Slide - Nâng Tầm Bài Giảng Giáo Dục Số",
+  "description": "Website chính thức cung cấp và tư vấn các dịch vụ thiết kế PowerPoint, E-Learning, và Làm phim Hoạt hình giáo khoa cao cấp của Maris Slide.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
