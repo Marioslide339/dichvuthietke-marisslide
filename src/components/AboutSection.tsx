@@ -1,4 +1,5 @@
 import { ShieldCheck, Zap, Sparkles, BookOpen, Clock, Heart, ArrowRight, Award, Cpu } from "lucide-react";
+import heroImg from "../assets/images/hero_ai_3d_interactive.png";
 
 interface AboutSectionProps {
   setActiveTab: (tab: string) => void;
@@ -6,8 +7,7 @@ interface AboutSectionProps {
 }
 
 export default function AboutSection({ setActiveTab, openBookingModal }: AboutSectionProps) {
-  // Use the exact generated image source URL
-  const heroImgUrl = "/src/assets/images/hero_ai_3d_interactive.png";
+  const heroImgUrl = heroImg;
 
   const painPoints = [
     {
@@ -48,7 +48,7 @@ export default function AboutSection({ setActiveTab, openBookingModal }: AboutSe
   return (
     <div id="about-section-container" className="space-y-20 py-8">
       {/* Hero Header */}
-      <section className="relative overflow-hidden bg-radial from-rose-50 to-transparent rounded-3xl p-8 md:p-12 border border-rose-100">
+      <section className="relative overflow-hidden bg-rose-50/50 rounded-3xl p-8 md:p-12 border border-rose-100">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7 space-y-6">
             <div className="inline-flex items-center space-x-2 bg-rose-50 text-rose-600 px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">
