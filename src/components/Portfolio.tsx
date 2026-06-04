@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import { Sparkles, ArrowUpRight, Search, Play, FileText, CheckCircle } from "lucide-react";
+import elearningImg from "../assets/images/demo_elearning_interactive.png";
+import pptImg from "../assets/images/mario_slide_hero_1780385062012.png";
+import animalImg from "../assets/images/demo_animal_3d_1780385098693.png";
+import kitchenImg from "../assets/images/demo_kitchen_2d_1780385079211.png";
 
 export default function Portfolio() {
   const [selectedCategory, setSelectedCategory] = useState<"all" | "ppt" | "animation" | "elearning">("all");
@@ -9,7 +13,7 @@ export default function Portfolio() {
       title: "Bài giảng tương tác E-Learning",
       category: "elearning",
       desc: "Quiz trắc nghiệm kéo thả đồng bộ lời giảng giáo viên. Định dạng đóng SCORM 2004 hỗ trợ chạy mượt trên mọi hệ thống LMS.",
-      imgUrl: "/src/assets/images/demo_elearning_interactive.png",
+      imgUrl: elearningImg,
       tag: "Chuẩn E-Learning SCORM",
       color: "border-emerald-100",
       link: "https://khoahoc4-sudadangcuanam.netlify.app/",
@@ -18,7 +22,7 @@ export default function Portfolio() {
       title: "Bài giảng PowerPoint",
       category: "ppt",
       desc: "Lên kịch bản hoạt ảnh theo phương pháp Trạm chuẩn nâng cao. Tích hợp minigame câu cá và tính điểm thông minh.",
-      imgUrl: "/src/assets/images/mario_slide_hero_1780385062012.png", // reusing brand graphic for slide samples
+      imgUrl: pptImg,
       tag: "PowerPoint Nâng Cao (Chuẩn Trạm)",
       color: "border-blue-100",
       link: "https://youtu.be/8waAhW77MKo?si=DnrzFTg6wM1OhMSn",
@@ -27,7 +31,7 @@ export default function Portfolio() {
       title: "Video hoạt hình 3D dựng trên AI",
       category: "animation",
       desc: "Công nghệ AI dựng hình con vật 3D sống động chân thật, kích thích tư duy quan sát khám phá tự nhiên lớp 2.",
-      imgUrl: "/src/assets/images/demo_animal_3d_1780385098693.png",
+      imgUrl: animalImg,
       tag: "Dựng Phim Hoạt Hình 3D AI",
       color: "border-rose-100",
       link: "https://youtu.be/i9s6Bl0IPJA?si=-jSiDSoHXW3sl4Nl",
@@ -36,7 +40,7 @@ export default function Portfolio() {
       title: "Phim hoạt hình 2D dựng trên Animiz",
       category: "animation",
       desc: "Trang bị hoạt cảnh nhà bếp ngộ nghĩnh, bổ sung trò chơi nấu ăn tương tác rèn luyện trí não bé mầm non.",
-      imgUrl: "/src/assets/images/demo_kitchen_2d_1780385079211.png",
+      imgUrl: kitchenImg,
       tag: "Dựng Phim Hoạt Hình 2D",
       color: "border-amber-100",
       link: "https://www.youtube.com/watch?v=NGQsQ0Ks-1I",
