@@ -13,7 +13,7 @@ export default function Navbar({ activeTab, setActiveTab, openBookingModal }: Na
     { id: "home", label: "Trang chủ", icon: BookOpen },
     { id: "services", label: "Dịch vụ & Bảng giá", icon: Layers },
     { id: "workflow", label: "Quy trình", icon: ClipboardList },
-    { id: "courses", label: "Khóa học", icon: GraduationCap, externalUrl: "https://khoahoccongnghe-marisslide.netlify.app/" },
+    { id: "courses", label: "Khóa học", icon: GraduationCap, externalUrl: "https://khoahoccongnghe2-marisslide.vercel.app/" },
     { id: "advisor", label: "Trợ lý AI Tư vấn", icon: MessageSquare },
   ];
 
