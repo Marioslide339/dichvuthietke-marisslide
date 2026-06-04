@@ -5,7 +5,6 @@ import ServicesSection from "./components/ServicesSection";
 import WorkflowSection from "./components/WorkflowSection";
 import AIConsultant from "./components/AIConsultant";
 import BookingForm from "./components/BookingForm";
-import Portfolio from "./components/Portfolio";
 import Footer from "./components/Footer";
 import { BookingOrder, ServiceType } from "./types";
 import { Sparkles, ClipboardList, ShieldAlert, CheckCircle, Clock, Trash2, HelpCircle, ChevronDown, ChevronUp } from "lucide-react";
@@ -115,9 +114,6 @@ export default function App() {
               setActiveTab={setActiveTab}
               openBookingModal={() => setIsBookingOpen(true)}
             />
-
-            {/* Offline portfolio interactive preview of actual graphics */}
-            <Portfolio />
 
             {/* Interactive Orders Hub Area for tracking placed invoices */}
             {orders.length > 0 && (
