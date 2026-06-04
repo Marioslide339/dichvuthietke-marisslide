@@ -54,7 +54,7 @@ const getOfflineResponse = (query: string): string => {
   if (q.includes("khóa học") || q.includes("học") || q.includes("đào tạo") || q.includes("lớp học")) {
     return `### Khóa học Công nghệ tại Maris Slide:
 Hiện tại Maris Slide đang cung cấp các khóa học công nghệ giáo dục giúp thầy cô tự làm chủ các công cụ soạn bài giảng.
-- Quý thầy cô vui lòng truy cập liên kết sau để xem chi tiết thông tin khóa học: [Xem thông tin Khóa Học](https://khoahoccongnghe-marisslide.netlify.app/)`;
+- Quý thầy cô vui lòng truy cập liên kết sau để xem chi tiết thông tin khóa học: [Xem thông tin Khóa Học](https://khoahoccongnghe2-marisslide.vercel.app/)`;
   }
 
   if (q.includes("giá") || q.includes("bao nhiêu") || q.includes("phí") || q.includes("chi phí") || q.includes("báo giá") || q.includes("tiền")) {
