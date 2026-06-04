@@ -262,6 +262,31 @@ export default function App() {
 
       {/* Brand information policies and contacts footers */}
       <Footer />
+
+      {/* Fixed Floating Zalo Contact Button */}
+      <a
+        id="floating-zalo-btn"
+        href="https://zalo.me/0396581283"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 z-50 flex items-center space-x-2 bg-[#0068ff] hover:bg-[#0054d3] text-white px-4 py-3 rounded-2xl shadow-2xl shadow-blue-400/40 transition-all hover:scale-105 active:scale-95 cursor-pointer group"
+        title="Liên hệ Zalo tư vấn dịch vụ"
+      >
+        {/* Zalo pulse ring */}
+        <span className="absolute inset-0 rounded-2xl bg-[#0068ff] animate-ping opacity-20 pointer-events-none"></span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 48 48"
+          className="w-5 h-5 shrink-0 fill-white"
+          aria-hidden="true"
+        >
+          <path d="M24 4C12.95 4 4 12.95 4 24c0 3.69.99 7.15 2.72 10.13L4 44l10.16-2.68A19.93 19.93 0 0024 44c11.05 0 20-8.95 20-20S35.05 4 24 4zm0 36c-3.18 0-6.16-.87-8.72-2.38l-.62-.37-6.04 1.58 1.61-5.89-.41-.65A15.93 15.93 0 018 24c0-8.82 7.18-16 16-16s16 7.18 16 16-7.18 16-16 16zm8.71-11.47l-2.09-.96c-.28-.13-.59-.08-.82.12l-1.38 1.29c-.22.2-.55.24-.82.1-1.46-.74-4.53-3.31-5.39-4.91-.13-.25-.08-.55.13-.74l1.27-1.23c.21-.2.26-.51.12-.77l-1.12-2.13c-.16-.3-.5-.42-.82-.3l-1.76.72c-.31.13-.5.43-.48.77.12 2.05 1.08 8.47 8.12 10.82.33.11.69-.01.89-.29l1.1-1.57c.19-.28.14-.65-.15-.82z"/>
+        </svg>
+        <div className="flex flex-col leading-tight">
+          <span className="text-[10px] font-bold uppercase tracking-wide opacity-80">Liên hệ Zalo tư vấn</span>
+          <span className="text-sm font-extrabold">0396.581.283</span>
+        </div>
+      </a>
     </div>
   );
 }
