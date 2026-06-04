@@ -13,7 +13,7 @@ export default function WorkflowSection() {
     {
       step: "02",
       title: "Tư Vấn Giải Pháp Sư Phạm",
-      desc: "Chuyên viên Mario Slide liên hệ tư vấn chọn gói (Gói PowerPoint, E-Learning hoặc Làm phim hoạt cảnh 2D/3D).",
+      desc: "Chuyên viên Maris Slide liên hệ tư vấn chọn gói (Gói PowerPoint, E-Learning hoặc Làm phim hoạt cảnh 2D/3D).",
       icon: FileCheck,
       color: "text-amber-500 bg-amber-50 border-amber-100",
     },
@@ -34,14 +34,14 @@ export default function WorkflowSection() {
     {
       step: "05",
       title: "Duyệt Bản Demo Sơ Bộ",
-      desc: "Mario Slide gửi liên kết xem trước demo. Giáo viên đánh giá nội dung, hiệu ứng và mức độ thích thú của hoạt cảnh.",
+      desc: "Maris Slide gửi liên kết xem trước demo. Giáo viên đánh giá nội dung, hiệu ứng và mức độ thích thú của hoạt cảnh.",
       icon: ClipboardCheck,
       color: "text-blue-500 bg-blue-50 border-blue-100",
     },
     {
       step: "06",
       title: "Hiệu Chỉnh Theo Gói Đã Chọn",
-      desc: "Chỉnh sửa thẩm mỹ theo đúng hạn mức (3 lần < 10% với Gói PPT-1, 5 lần < 20% với Gói PPT-2, hay 10 lần với E-Learning-3).",
+      desc: "Chỉnh sửa thẩm mỹ theo đúng hạn mức (3 lần với Gói PPT-1, 5 lần với Gói PPT-2, hay 10 lần với E-Learning-3).",
       icon: ThumbsUp,
       color: "text-pink-500 bg-pink-50 border-pink-100",
     },
@@ -55,7 +55,7 @@ export default function WorkflowSection() {
     {
       step: "08",
       title: "Chăm Sóc Sau Bàn Giao",
-      desc: "Mario Slide lưu trữ dự án bảo mật, hỗ trợ thầy cô các kỹ thuật thao tác bấm nút trò chơi trong vòng 1 tháng tối đa.",
+      desc: "Maris Slide lưu trữ dự án bảo mật, hỗ trợ thầy cô các kỹ thuật thao tác bấm nút trò chơi trong vòng 1 tháng tối đa.",
       icon: CheckCircle,
       color: "text-teal-500 bg-teal-50 border-teal-100",
     },
@@ -68,7 +68,7 @@ export default function WorkflowSection() {
           Quy trình <span className="text-rose-500">8 Bước Chuyên Nghiệp</span>
         </h2>
         <p className="text-gray-500 text-sm">
-          Nhờ quy trình khép kín, an toàn và bài bản, Mario Slide tự tin rút ngắn thời gian thiết kế, đảm bảo hiệu ứng và tương tác sinh động nhất của bài giảng.
+          Nhờ quy trình khép kín, an toàn và bài bản, Maris Slide tự tin rút ngắn thời gian thiết kế, đảm bảo hiệu ứng và tương tác sinh động nhất của bài giảng.
         </p>
       </div>
 
