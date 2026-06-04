@@ -1,5 +1,6 @@
 import { ShieldCheck, Zap, Sparkles, BookOpen, Clock, Heart, ArrowRight, Award, Cpu } from "lucide-react";
 import heroImg from "../assets/images/hero_ai_3d_interactive.png";
+import Portfolio from "./Portfolio";
 
 interface AboutSectionProps {
   setActiveTab: (tab: string) => void;
@@ -140,6 +141,9 @@ export default function AboutSection({ setActiveTab, openBookingModal }: AboutSe
           </div>
         </div>
       </section>
+
+      {/* Portfolio interactive preview section */}
+      <Portfolio />
 
       {/* Pain points solve */}
       <section className="space-y-10">
