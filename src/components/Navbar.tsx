@@ -1,5 +1,6 @@
 import React from "react";
 import { Sparkles, MessageSquare, ShieldCheck, ClipboardList, BookOpen, Layers, GraduationCap } from "lucide-react";
+import logoImg from "../assets/images/logo.jpg";
 
 interface NavbarProps {
   activeTab: string;
@@ -23,7 +24,7 @@ export default function Navbar({ activeTab, setActiveTab, openBookingModal }: Na
           {/* Logo Brand */}
           <div className="flex items-center space-x-3 cursor-pointer" onClick={() => setActiveTab("home")}>
             <img
-              src="/src/assets/images/logo.jpg"
+              src={logoImg}
               alt="Maris Slide Logo"
               className="w-10 h-10 rounded-xl object-cover shadow-md border border-gray-100"
               onError={(e) => {
