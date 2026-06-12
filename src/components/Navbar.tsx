@@ -1,5 +1,5 @@
-import React from "react";
-import { Sparkles, MessageSquare, ShieldCheck, ClipboardList, BookOpen, Layers, GraduationCap } from "lucide-react";
+import React, { useState } from "react";
+import { Sparkles, MessageSquare, ShieldCheck, ClipboardList, BookOpen, Layers, GraduationCap, Menu, X } from "lucide-react";
 import logoImg from "../assets/images/logo.jpg";
 
 interface NavbarProps {
@@ -9,6 +9,7 @@ interface NavbarProps {
 }
 
 export default function Navbar({ activeTab, setActiveTab, openBookingModal }: NavbarProps) {
+  const [isOpen, setIsOpen] = useState(false);
   const navItems = [
     { id: "home", label: "Trang chủ", icon: BookOpen },
     { id: "services", label: "Dịch vụ & Bảng giá", icon: Layers },
@@ -22,7 +23,7 @@ export default function Navbar({ activeTab, setActiveTab, openBookingModal }: Na
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-18 items-center">
           {/* Logo Brand */}
-          <div className="flex items-center space-x-3 cursor-pointer" onClick={() => setActiveTab("home")}>
+          <div className="flex items-center space-x-3 cursor-pointer" onClick={() => { setActiveTab("home"); setIsOpen(false); }}>
             <img
               src={logoImg}
               alt="Maris Slide Logo"
@@ -48,7 +49,7 @@ export default function Navbar({ activeTab, setActiveTab, openBookingModal }: Na
             </div>
           </div>
 
-          {/* Nav Destinations */}
+          {/* Nav Destinations (Desktop) */}
           <div className="hidden md:flex space-x-1">
             {navItems.map((item) => {
               const IconComp = item.icon;
@@ -86,19 +87,71 @@ export default function Navbar({ activeTab, setActiveTab, openBookingModal }: Na
             })}
           </div>
 
-          {/* Action Call Button */}
-          <div className="flex items-center space-x-3">
+          {/* Action Call Button & Burger Toggle */}
+          <div className="flex items-center space-x-2 md:space-x-3">
             <button
               id="cta-booking-btn"
               onClick={openBookingModal}
-              className="flex items-center space-x-2 bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white px-5 py-2.5 rounded-xl text-sm font-bold shadow-lg shadow-rose-200 hover:shadow-xl hover:shadow-rose-300 transition-all active:scale-[0.98]"
+              className="flex items-center space-x-2 bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white px-4 py-2 md:px-5 md:py-2.5 rounded-xl text-xs md:text-sm font-bold shadow-lg shadow-rose-200 hover:shadow-xl hover:shadow-rose-300 transition-all active:scale-[0.98]"
             >
               <Sparkles className="w-4 h-4 animate-pulse" />
               <span>Đặt Thiết Kế</span>
             </button>
+
+            {/* Burger Menu Button */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="md:hidden inline-flex items-center justify-center p-2 rounded-xl text-gray-500 hover:text-rose-500 hover:bg-rose-50 focus:outline-none transition-colors"
+              aria-label="Toggle Menu"
+            >
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
         </div>
       </div>
+
+      {/* Mobile Menu Dropdown */}
+      {isOpen && (
+        <div className="md:hidden border-t border-rose-100 bg-white/95 px-4 py-3 space-y-1 shadow-inner animate-fade-in">
+          {navItems.map((item) => {
+            const IconComp = item.icon;
+            const isActive = activeTab === item.id;
+            const linkClasses = `flex items-center space-x-3 w-full px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 ${
+              isActive
+                ? "bg-rose-50 text-rose-600"
+                : "text-gray-600 hover:bg-gray-50 hover:text-rose-500"
+            }`;
+            if ('externalUrl' in item && item.externalUrl) {
+              return (
+                <a
+                  key={item.id}
+                  href={item.externalUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={linkClasses}
+                  onClick={() => setIsOpen(false)}
+                >
+                  <IconComp className="w-5 h-5" />
+                  <span>{item.label}</span>
+                </a>
+              );
+            }
+            return (
+              <button
+                key={item.id}
+                onClick={() => {
+                  setActiveTab(item.id);
+                  setIsOpen(false);
+                }}
+                className={linkClasses}
+              >
+                <IconComp className="w-5 h-5" />
+                <span>{item.label}</span>
+              </button>
+            );
+          })}
+        </div>
+      )}
     </nav>
   );
 }
