@@ -95,14 +95,44 @@
           </button>
         </div>
 
-        <!-- Action Call Button -->
-        <div class="flex items-center space-x-3">
-          <button id="cta-booking-btn" onclick="openBookingModal('powerpoint', 'ppt_g2')" class="flex items-center space-x-2 bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white px-5 py-2.5 rounded-xl text-sm font-bold shadow-lg shadow-rose-200 hover:shadow-xl hover:shadow-rose-300 transition-all active:scale-[0.98]">
+        <!-- Action Call Button & Burger Toggle -->
+        <div class="flex items-center space-x-2 md:space-x-3">
+          <button id="cta-booking-btn" onclick="openBookingModal('powerpoint', 'ppt_g2')" class="flex items-center space-x-2 bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white px-4 py-2 md:px-5 md:py-2.5 rounded-xl text-xs md:text-sm font-bold shadow-lg shadow-rose-200 hover:shadow-xl hover:shadow-rose-300 transition-all active:scale-[0.98]">
             <i data-lucide="sparkles" class="w-4 h-4 animate-pulse"></i>
             <span>Đặt Thiết Kế</span>
           </button>
+
+          <!-- Burger Menu Button -->
+          <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden inline-flex items-center justify-center p-2 rounded-xl text-gray-500 hover:text-rose-500 hover:bg-rose-50 focus:outline-none transition-colors" aria-label="Toggle Menu">
+            <i data-lucide="menu" id="menu-icon-burger" class="w-6 h-6"></i>
+            <i data-lucide="x" id="menu-icon-close" class="w-6 h-6 hidden"></i>
+          </button>
         </div>
       </div>
+    </div>
+
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-menu-dropdown" class="hidden md:hidden border-t border-rose-100 bg-white/95 px-4 py-3 space-y-1 shadow-inner">
+      <button id="mobile-nav-tab-home" onclick="switchTab('home'); closeMobileMenu();" class="mobile-nav-btn flex items-center space-x-3 w-full px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 bg-rose-50 text-rose-600">
+        <i data-lucide="book-open" class="w-5 h-5"></i>
+        <span>Trang chủ</span>
+      </button>
+      <button id="mobile-nav-tab-services" onclick="switchTab('services'); closeMobileMenu();" class="mobile-nav-btn flex items-center space-x-3 w-full px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 text-gray-600 hover:bg-gray-50 hover:text-rose-500">
+        <i data-lucide="layers" class="w-5 h-5"></i>
+        <span>Dịch vụ & Bảng giá</span>
+      </button>
+      <button id="mobile-nav-tab-workflow" onclick="switchTab('workflow'); closeMobileMenu();" class="mobile-nav-btn flex items-center space-x-3 w-full px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 text-gray-600 hover:bg-gray-50 hover:text-rose-500">
+        <i data-lucide="clipboard-list" class="w-5 h-5"></i>
+        <span>Quy trình</span>
+      </button>
+      <a href="https://khoahoccongnghe2-marisslide.vercel.app/" target="_blank" rel="noopener noreferrer" onclick="closeMobileMenu();" class="mobile-nav-btn flex items-center space-x-3 w-full px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 text-gray-600 hover:bg-gray-50 hover:text-rose-500">
+        <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+        <span>Khóa học</span>
+      </a>
+      <button id="mobile-nav-tab-advisor" onclick="switchTab('advisor'); closeMobileMenu();" class="mobile-nav-btn flex items-center space-x-3 w-full px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 text-gray-600 hover:bg-gray-50 hover:text-rose-500">
+        <i data-lucide="message-square" class="w-5 h-5"></i>
+        <span>Trợ lý AI Tư vấn</span>
+      </button>
     </div>
   </nav>
 
@@ -149,12 +179,9 @@
             </p>
 
             <div class="flex flex-wrap gap-4">
-              <button onclick="openBookingModal('powerpoint', 'ppt_g2')" class="bg-rose-500 hover:bg-rose-600 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg shadow-rose-200 transition-all active:scale-[0.98] cursor-pointer flex items-center space-x-2 text-base">
-                <span>Nhận Tư Vấn Gói Dịch Vụ</span>
-                <i data-lucide="arrow-right" class="w-5 h-5"></i>
-              </button>
-              <button onclick="switchTab('services')" class="bg-white hover:bg-gray-50 text-gray-700 hover:text-rose-500 font-semibold px-6 py-3.5 rounded-xl border border-gray-200 transition-all cursor-pointer flex items-center space-x-2 text-sm">
+              <button onclick="switchTab('services')" class="bg-rose-500 hover:bg-rose-600 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg shadow-rose-200 hover:shadow-xl hover:shadow-rose-300 transition-all active:scale-[0.98] cursor-pointer flex items-center space-x-2 text-base">
                 <span>Xem Bảng Giá Chi Tiết</span>
+                <i data-lucide="arrow-right" class="w-5 h-5"></i>
               </button>
             </div>
 
@@ -1873,8 +1900,44 @@
         activeBtn.className = "nav-btn flex items-center space-x-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 bg-rose-50 text-rose-600";
       }
 
+      // Update Mobile Nav Button Active styling
+      document.querySelectorAll('.mobile-nav-btn').forEach(btn => {
+        btn.className = "mobile-nav-btn flex items-center space-x-3 w-full px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 text-gray-600 hover:bg-gray-50 hover:text-rose-500";
+      });
+      const activeMobileBtn = document.getElementById('mobile-nav-tab-' + tabId);
+      if (activeMobileBtn) {
+        activeMobileBtn.className = "mobile-nav-btn flex items-center space-x-3 w-full px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 bg-rose-50 text-rose-600";
+      }
+
       // Re-trigger lucide icons
       lucide.createIcons();
+    }
+
+    // Responsive Mobile Menu functions
+    function toggleMobileMenu() {
+      const dropdown = document.getElementById('mobile-menu-dropdown');
+      const burgerIcon = document.getElementById('menu-icon-burger');
+      const closeIcon = document.getElementById('menu-icon-close');
+      
+      if (dropdown.classList.contains('hidden')) {
+        dropdown.classList.remove('hidden');
+        burgerIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+      } else {
+        dropdown.classList.add('hidden');
+        burgerIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      }
+    }
+
+    function closeMobileMenu() {
+      const dropdown = document.getElementById('mobile-menu-dropdown');
+      const burgerIcon = document.getElementById('menu-icon-burger');
+      const closeIcon = document.getElementById('menu-icon-close');
+      
+      dropdown.classList.add('hidden');
+      burgerIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
     }
 
     // FAQ accordions logic
