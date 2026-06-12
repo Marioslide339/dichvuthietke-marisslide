@@ -86,19 +86,12 @@ export default function AboutSection({ setActiveTab, openBookingModal }: AboutSe
 
             <div className="flex flex-wrap gap-4">
               <button
-                id="hero-booking-btn"
-                onClick={openBookingModal}
-                className="bg-rose-500 hover:bg-rose-600 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg shadow-rose-200 transition-all active:scale-[0.98] cursor-pointer flex items-center space-x-2 text-base"
-              >
-                <span>Nhận Tư Vấn Gói Dịch Vụ</span>
-                <ArrowRight className="w-5 h-5" />
-              </button>
-              <button
                 id="hero-go-services"
                 onClick={() => setActiveTab("services")}
-                className="bg-white hover:bg-gray-50 text-gray-700 hover:text-rose-500 font-semibold px-6 py-3.5 rounded-xl border border-gray-200 transition-all cursor-pointer flex items-center space-x-2 text-sm"
+                className="bg-rose-500 hover:bg-rose-600 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg shadow-rose-200 hover:shadow-xl hover:shadow-rose-300 transition-all active:scale-[0.98] cursor-pointer flex items-center space-x-2 text-base"
               >
                 <span>Xem Bảng Giá Chi Tiết</span>
+                <ArrowRight className="w-5 h-5" />
               </button>
             </div>
 
