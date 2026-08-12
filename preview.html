@@ -522,9 +522,9 @@
         <!-- Filters bar -->
         <div class="flex flex-wrap justify-center gap-2 pt-4">
           <button onclick="filterServices('all')" id="srv-filter-all" class="srv-filter-btn px-4 py-2 rounded-full text-xs font-bold transition-all bg-rose-500 text-white shadow-md shadow-rose-200">Tất cả dịch vụ</button>
+          <button onclick="filterServices('elearning')" id="srv-filter-elearning" class="srv-filter-btn px-4 py-2 rounded-full text-xs font-bold transition-all bg-gray-100 text-gray-600 hover:bg-gray-200">Thiết kế E-Learning</button>
           <button onclick="filterServices('powerpoint')" id="srv-filter-powerpoint" class="srv-filter-btn px-4 py-2 rounded-full text-xs font-bold transition-all bg-gray-100 text-gray-600 hover:bg-gray-200">Thiết kế PowerPoint</button>
           <button onclick="filterServices('animation')" id="srv-filter-animation" class="srv-filter-btn px-4 py-2 rounded-full text-xs font-bold transition-all bg-gray-100 text-gray-600 hover:bg-gray-200">Phim Hoạt Hình</button>
-          <button onclick="filterServices('elearning')" id="srv-filter-elearning" class="srv-filter-btn px-4 py-2 rounded-full text-xs font-bold transition-all bg-gray-100 text-gray-600 hover:bg-gray-200">Thiết kế E-Learning</button>
           <button onclick="filterServices('skkn')" id="srv-filter-skkn" class="srv-filter-btn px-4 py-2 rounded-full text-xs font-bold transition-all bg-gray-100 text-gray-600 hover:bg-gray-200">Sáng kiến kinh nghiệm</button>
           <button onclick="filterServices('gvg')" id="srv-filter-gvg" class="srv-filter-btn px-4 py-2 rounded-full text-xs font-bold transition-all bg-gray-100 text-gray-600 hover:bg-gray-200">Biện pháp & Báo cáo GVG</button>
           <button onclick="filterServices('app')" id="srv-filter-app" class="srv-filter-btn px-4 py-2 rounded-full text-xs font-bold transition-all bg-gray-100 text-gray-600 hover:bg-gray-200">Thiết kế APP</button>
@@ -533,6 +533,183 @@
 
       <!-- Grid of package cards -->
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8" id="services-grid">
+        <!-- E-Learning Gói 1 -->
+        <div class="service-card elearning bg-white rounded-2xl border border-gray-200 p-6 flex flex-col justify-between transition-all hover:shadow-xl relative">
+          <div class="space-y-5">
+            <div>
+              <span class="text-xs font-bold text-rose-500 uppercase tracking-widest">elearning</span>
+              <h3 class="text-lg font-black text-gray-900 mt-1">E-Learning Cơ Bản (Gói 1)</h3>
+              <p class="text-gray-500 text-xs mt-2 leading-relaxed h-12 overflow-hidden">Tạo bản E-learning chuẩn quốc tế, phù hợp kiểm tra và nộp kho bài giảng, tương thích hoàn toàn các LMS trường học.</p>
+            </div>
+
+            <!-- Price block -->
+            <div class="border-t border-b border-gray-100 py-4">
+              <p class="text-sm font-semibold text-gray-400">Trọn gói từ: </p>
+              <div class="flex items-baseline space-x-1.5">
+                <span class="text-3xl font-black text-gray-950">1.500.000đ</span>
+                <span class="text-gray-500 text-xs">/ Bài giảng</span>
+              </div>
+            </div>
+
+            <!-- Features list -->
+            <ul class="space-y-2.5">
+              <li class="flex items-start space-x-2 text-xs text-gray-600">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                <span>Đồng bộ thuyết minh với nội dung bài dạy</span>
+              </li>
+              <li class="flex items-start space-x-2 text-xs text-gray-600">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                <span>Tích hợp Quiz trắc nghiệm tương tác cơ bản</span>
+              </li>
+              <li class="flex items-start space-x-2 text-xs text-gray-600">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                <span>Bàn giao file nguồn PPT, chuẩn HTML5/SCORM</span>
+              </li>
+              <li class="flex items-start space-x-2 text-xs text-gray-600">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                <span>Chưa có ứng dụng AI vào bài giảng</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-4 border-t border-gray-100 space-y-4">
+            <div class="text-[10px] text-gray-500">
+              <p class="font-bold text-gray-700">Quy định sửa bài:</p>
+              <p class="italic">Hỗ trợ chỉnh sửa biên tập lỗi nhỏ chính tả miễn phí<br/>* Lưu ý chung: Giáo viên phải tự ghi âm, ghi hình để Maris Slide đồng bộ lời giảng khớp với hiệu ứng.</p>
+            </div>
+            <div class="bg-gray-50 rounded-xl p-3 text-[10px] text-gray-600">
+              <p class="font-bold">Đối tượng lý tưởng:</p>
+              <p>Thầy cô cần nộp học liệu số định kỳ, có tích hợp Quiz cơ bản tương tác tốt.</p>
+            </div>
+            <button onclick="openBookingModal('elearning', 'el_g1')" class="w-full bg-gray-950 hover:bg-rose-600 text-white py-2.5 rounded-xl font-bold text-xs transition-colors flex items-center justify-center space-x-1 cursor-pointer">
+              <span>Chọn Gói Dịch Vụ</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- E-Learning Gói 2 -->
+        <div class="service-card elearning bg-white rounded-2xl border border-gray-200 p-6 flex flex-col justify-between transition-all hover:shadow-xl relative">
+          <div class="space-y-5">
+            <div>
+              <span class="text-xs font-bold text-rose-500 uppercase tracking-widest">elearning</span>
+              <h3 class="text-lg font-black text-gray-900 mt-1">E-Learning Phổ thông (Gói 2)</h3>
+              <p class="text-gray-500 text-xs mt-2 leading-relaxed h-12 overflow-hidden">E-learning thế hệ mới bổ sung tương tác động, sửa lỗi toàn diện và thích ứng tối đa với trải nghiệm học sinh.</p>
+            </div>
+
+            <!-- Price block -->
+            <div class="border-t border-b border-gray-100 py-4">
+              <p class="text-sm font-semibold text-gray-400">Trọn gói từ: </p>
+              <div class="flex items-baseline space-x-1.5">
+                <span class="text-3xl font-black text-gray-950">2.000.000đ</span>
+                <span class="text-gray-500 text-xs">/ Bài giảng</span>
+              </div>
+            </div>
+
+            <!-- Features list -->
+            <ul class="space-y-2.5">
+              <li class="flex items-start space-x-2 text-xs text-gray-600">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                <span>Bao gồm toàn bộ quyền lợi Gói 1</span>
+              </li>
+              <li class="flex items-start space-x-2 text-xs text-gray-600">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                <span>Hỗ trợ chỉnh sửa nội dung chuyên sâu tới 5 lần</span>
+              </li>
+              <li class="flex items-start space-x-2 text-xs text-gray-600">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                <span>Thiết kế trò chơi phân vai trong E-learning</span>
+              </li>
+              <li class="flex items-start space-x-2 text-xs text-gray-600">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                <span>Đóng gói chuẩn Scorm 2004 / HTML5</span>
+              </li>
+              <li class="flex items-start space-x-2 text-xs text-gray-600">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                <span>Chưa có ứng dụng AI vào bài giảng</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-4 border-t border-gray-100 space-y-4">
+            <div class="text-[10px] text-gray-500">
+              <p class="font-bold text-gray-700">Quy định sửa bài:</p>
+              <p class="italic">Hỗ trợ sửa đổi và hiệu chỉnh nội dung 5 lần<br/>* Lưu ý chung: Giáo viên phải tự ghi âm, ghi hình để Maris Slide đồng bộ lời giảng khớp với hiệu ứng.</p>
+            </div>
+            <div class="bg-gray-50 rounded-xl p-3 text-[10px] text-gray-600">
+              <p class="font-bold">Đối tượng lý tưởng:</p>
+              <p>Thầy cô nộp bài dự thi cấp Quận/Tỉnh, yêu cầu chỉnh sửa tỉ mỉ từ hội đồng giám khảo.</p>
+            </div>
+            <button onclick="openBookingModal('elearning', 'el_g2')" class="w-full bg-gray-950 hover:bg-rose-600 text-white py-2.5 rounded-xl font-bold text-xs transition-colors flex items-center justify-center space-x-1 cursor-pointer">
+              <span>Chọn Gói Dịch Vụ</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- E-Learning Gói 3 (Khuyên dùng) -->
+        <div class="service-card elearning bg-purple-50/50 border border-purple-200 ring-2 ring-purple-400/10 rounded-2xl p-6 flex flex-col justify-between transition-all hover:shadow-xl relative">
+          <span class="absolute -top-3 left-6 px-3 py-1 bg-purple-500 text-white text-[10px] font-bold rounded-full uppercase tracking-wider animate-pulse">Giải pháp Đỉnh Cao Quốc Gia</span>
+          <div class="space-y-5">
+            <div>
+              <span class="text-xs font-bold text-purple-650 uppercase tracking-widest">elearning</span>
+              <h3 class="text-lg font-black text-gray-900 mt-1">E-Learning Cao Cấp (Gói 3)</h3>
+              <p class="text-gray-500 text-xs mt-2 leading-relaxed h-12 overflow-hidden">Gói chất lượng tốt nhất. Maris Slide trực tiếp lên kịch bản chuyển động, lời thoại sư phạm, sơ đồ hóa tư duy khoa học.</p>
+            </div>
+
+            <!-- Price block -->
+            <div class="border-t border-b border-gray-100 py-4">
+              <p class="text-sm font-semibold text-gray-400">Trọn gói từ: </p>
+              <div class="flex items-baseline space-x-1.5">
+                <span class="text-3xl font-black text-gray-950">4.000.000đ</span>
+                <span class="text-gray-500 text-xs">/ Bài giảng</span>
+              </div>
+            </div>
+
+            <!-- Features list -->
+            <ul class="space-y-2.5">
+              <li class="flex items-start space-x-2 text-xs text-gray-600">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                <span>Lên ý tưởng, kịch bản bài dạy từ A-Z</span>
+              </li>
+              <li class="flex items-start space-x-2 text-xs text-gray-600">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                <span>Kết hợp Mini game, APP AI tương tác đỉnh cao</span>
+              </li>
+              <li class="flex items-start space-x-2 text-xs text-gray-600">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                <span>Kết hợp APP chat bot hỗ trợ học viên</span>
+              </li>
+              <li class="flex items-start space-x-2 text-xs text-gray-600">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                <span>Video hoạt hình tình huống (Tổng thời lượng 2 phút)</span>
+              </li>
+              <li class="flex items-start space-x-2 text-xs text-gray-600">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                <span>Hình ảnh minh hoạ, phong cách thiết kế độc đáo</span>
+              </li>
+              <li class="flex items-start space-x-2 text-xs text-gray-600">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                <span>Hỗ trợ sửa đổi cao cấp tới 10 lần</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-4 border-t border-gray-100 space-y-4">
+            <div class="text-[10px] text-gray-500">
+              <p class="font-bold text-gray-700">Quy định sửa bài:</p>
+              <p class="italic">Hỗ trợ sửa đổi toàn diện 10 lần bất kể thay đổi bố cục<br/>* Lưu ý chung: Giáo viên phải tự ghi âm, ghi hình để Maris Slide đồng bộ lời giảng khớp với hiệu ứng.</p>
+            </div>
+            <div class="bg-white rounded-xl p-3 text-[10px] text-gray-600">
+              <p class="font-bold">Đối tượng lý tưởng:</p>
+              <p>E-learning thi cấp Quốc Gia, Trường học quốc tế xây dựng học liệu dùng chung lâu dài.</p>
+            </div>
+            <button onclick="openBookingModal('elearning', 'el_g3')" class="w-full bg-purple-950 hover:bg-rose-600 text-white py-2.5 rounded-xl font-bold text-xs transition-colors flex items-center justify-center space-x-1 cursor-pointer">
+              <span>Chọn Gói Dịch Vụ</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
         <!-- PowerPoint Gói 1 -->
         <div class="service-card powerpoint bg-white rounded-2xl border border-gray-200 p-6 flex flex-col justify-between transition-all hover:shadow-xl relative">
           <div class="space-y-5">
@@ -770,183 +947,6 @@
           </div>
         </div>
 
-        <!-- E-Learning Gói 1 -->
-        <div class="service-card elearning bg-white rounded-2xl border border-gray-200 p-6 flex flex-col justify-between transition-all hover:shadow-xl relative">
-          <div class="space-y-5">
-            <div>
-              <span class="text-xs font-bold text-rose-500 uppercase tracking-widest">elearning</span>
-              <h3 class="text-lg font-black text-gray-900 mt-1">E-Learning Cơ Bản (Gói 1)</h3>
-              <p class="text-gray-500 text-xs mt-2 leading-relaxed h-12 overflow-hidden">Tạo bản E-learning chuẩn quốc tế, phù hợp kiểm tra và nộp kho bài giảng, tương thích hoàn toàn các LMS trường học.</p>
-            </div>
-
-            <!-- Price block -->
-            <div class="border-t border-b border-gray-100 py-4">
-              <p class="text-sm font-semibold text-gray-400">Trọn gói từ: </p>
-              <div class="flex items-baseline space-x-1.5">
-                <span class="text-3xl font-black text-gray-950">1.500.000đ</span>
-                <span class="text-gray-500 text-xs">/ Bài giảng</span>
-              </div>
-            </div>
-
-            <!-- Features list -->
-            <ul class="space-y-2.5">
-              <li class="flex items-start space-x-2 text-xs text-gray-600">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
-                <span>Đồng bộ thuyết minh với nội dung bài dạy</span>
-              </li>
-              <li class="flex items-start space-x-2 text-xs text-gray-600">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
-                <span>Tích hợp Quiz trắc nghiệm tương tác cơ bản</span>
-              </li>
-              <li class="flex items-start space-x-2 text-xs text-gray-600">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
-                <span>Bàn giao file nguồn PPT, chuẩn HTML5/SCORM</span>
-              </li>
-              <li class="flex items-start space-x-2 text-xs text-gray-600">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
-                <span>Chưa có ứng dụng AI vào bài giảng</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="mt-8 pt-4 border-t border-gray-100 space-y-4">
-            <div class="text-[10px] text-gray-500">
-              <p class="font-bold text-gray-700">Quy định sửa bài:</p>
-              <p class="italic">Hỗ trợ chỉnh sửa biên tập lỗi nhỏ chính tả miễn phí<br/>* Lưu ý chung: Giáo viên phải tự ghi âm, ghi hình để Maris Slide đồng bộ lời giảng khớp với hiệu ứng.</p>
-            </div>
-            <div class="bg-gray-50 rounded-xl p-3 text-[10px] text-gray-600">
-              <p class="font-bold">Đối tượng lý tưởng:</p>
-              <p>Thầy cô cần nộp học liệu số định kỳ, có tích hợp Quiz cơ bản tương tác tốt.</p>
-            </div>
-            <button onclick="openBookingModal('elearning', 'el_g1')" class="w-full bg-gray-950 hover:bg-rose-600 text-white py-2.5 rounded-xl font-bold text-xs transition-colors flex items-center justify-center space-x-1 cursor-pointer">
-              <span>Chọn Gói Dịch Vụ</span>
-              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-            </button>
-          </div>
-        </div>
-
-        <!-- E-Learning Gói 2 -->
-        <div class="service-card elearning bg-white rounded-2xl border border-gray-200 p-6 flex flex-col justify-between transition-all hover:shadow-xl relative">
-          <div class="space-y-5">
-            <div>
-              <span class="text-xs font-bold text-rose-500 uppercase tracking-widest">elearning</span>
-              <h3 class="text-lg font-black text-gray-900 mt-1">E-Learning Phổ thông (Gói 2)</h3>
-              <p class="text-gray-500 text-xs mt-2 leading-relaxed h-12 overflow-hidden">E-learning thế hệ mới bổ sung tương tác động, sửa lỗi toàn diện và thích ứng tối đa với trải nghiệm học sinh.</p>
-            </div>
-
-            <!-- Price block -->
-            <div class="border-t border-b border-gray-100 py-4">
-              <p class="text-sm font-semibold text-gray-400">Trọn gói từ: </p>
-              <div class="flex items-baseline space-x-1.5">
-                <span class="text-3xl font-black text-gray-950">2.000.000đ</span>
-                <span class="text-gray-500 text-xs">/ Bài giảng</span>
-              </div>
-            </div>
-
-            <!-- Features list -->
-            <ul class="space-y-2.5">
-              <li class="flex items-start space-x-2 text-xs text-gray-600">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
-                <span>Bao gồm toàn bộ quyền lợi Gói 1</span>
-              </li>
-              <li class="flex items-start space-x-2 text-xs text-gray-600">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
-                <span>Hỗ trợ chỉnh sửa nội dung chuyên sâu tới 5 lần</span>
-              </li>
-              <li class="flex items-start space-x-2 text-xs text-gray-600">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
-                <span>Thiết kế trò chơi phân vai trong E-learning</span>
-              </li>
-              <li class="flex items-start space-x-2 text-xs text-gray-600">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
-                <span>Đóng gói chuẩn Scorm 2004 / HTML5</span>
-              </li>
-              <li class="flex items-start space-x-2 text-xs text-gray-600">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
-                <span>Chưa có ứng dụng AI vào bài giảng</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="mt-8 pt-4 border-t border-gray-100 space-y-4">
-            <div class="text-[10px] text-gray-500">
-              <p class="font-bold text-gray-700">Quy định sửa bài:</p>
-              <p class="italic">Hỗ trợ sửa đổi và hiệu chỉnh nội dung 5 lần<br/>* Lưu ý chung: Giáo viên phải tự ghi âm, ghi hình để Maris Slide đồng bộ lời giảng khớp với hiệu ứng.</p>
-            </div>
-            <div class="bg-gray-50 rounded-xl p-3 text-[10px] text-gray-600">
-              <p class="font-bold">Đối tượng lý tưởng:</p>
-              <p>Thầy cô nộp bài dự thi cấp Quận/Tỉnh, yêu cầu chỉnh sửa tỉ mỉ từ hội đồng giám khảo.</p>
-            </div>
-            <button onclick="openBookingModal('elearning', 'el_g2')" class="w-full bg-gray-950 hover:bg-rose-600 text-white py-2.5 rounded-xl font-bold text-xs transition-colors flex items-center justify-center space-x-1 cursor-pointer">
-              <span>Chọn Gói Dịch Vụ</span>
-              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-            </button>
-          </div>
-        </div>
-
-        <!-- E-Learning Gói 3 (Khuyên dùng) -->
-        <div class="service-card elearning bg-purple-50/50 border border-purple-200 ring-2 ring-purple-400/10 rounded-2xl p-6 flex flex-col justify-between transition-all hover:shadow-xl relative">
-          <span class="absolute -top-3 left-6 px-3 py-1 bg-purple-500 text-white text-[10px] font-bold rounded-full uppercase tracking-wider animate-pulse">Giải pháp Đỉnh Cao Quốc Gia</span>
-          <div class="space-y-5">
-            <div>
-              <span class="text-xs font-bold text-purple-650 uppercase tracking-widest">elearning</span>
-              <h3 class="text-lg font-black text-gray-900 mt-1">E-Learning Cao Cấp (Gói 3)</h3>
-              <p class="text-gray-500 text-xs mt-2 leading-relaxed h-12 overflow-hidden">Gói chất lượng tốt nhất. Maris Slide trực tiếp lên kịch bản chuyển động, lời thoại sư phạm, sơ đồ hóa tư duy khoa học.</p>
-            </div>
-
-            <!-- Price block -->
-            <div class="border-t border-b border-gray-100 py-4">
-              <p class="text-sm font-semibold text-gray-400">Trọn gói từ: </p>
-              <div class="flex items-baseline space-x-1.5">
-                <span class="text-3xl font-black text-gray-950">4.000.000đ</span>
-                <span class="text-gray-500 text-xs">/ Bài giảng</span>
-              </div>
-            </div>
-
-            <!-- Features list -->
-            <ul class="space-y-2.5">
-              <li class="flex items-start space-x-2 text-xs text-gray-600">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
-                <span>Lên ý tưởng, kịch bản bài dạy từ A-Z</span>
-              </li>
-              <li class="flex items-start space-x-2 text-xs text-gray-600">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
-                <span>Kết hợp Mini game, APP AI tương tác đỉnh cao</span>
-              </li>
-              <li class="flex items-start space-x-2 text-xs text-gray-600">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
-                <span>Kết hợp APP chat bot hỗ trợ học viên</span>
-              </li>
-              <li class="flex items-start space-x-2 text-xs text-gray-600">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
-                <span>Video hoạt hình tình huống (Tổng thời lượng 2 phút)</span>
-              </li>
-              <li class="flex items-start space-x-2 text-xs text-gray-600">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
-                <span>Hình ảnh minh hoạ, phong cách thiết kế độc đáo</span>
-              </li>
-              <li class="flex items-start space-x-2 text-xs text-gray-600">
-                <i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
-                <span>Hỗ trợ sửa đổi cao cấp tới 10 lần</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="mt-8 pt-4 border-t border-gray-100 space-y-4">
-            <div class="text-[10px] text-gray-500">
-              <p class="font-bold text-gray-700">Quy định sửa bài:</p>
-              <p class="italic">Hỗ trợ sửa đổi toàn diện 10 lần bất kể thay đổi bố cục<br/>* Lưu ý chung: Giáo viên phải tự ghi âm, ghi hình để Maris Slide đồng bộ lời giảng khớp với hiệu ứng.</p>
-            </div>
-            <div class="bg-white rounded-xl p-3 text-[10px] text-gray-600">
-              <p class="font-bold">Đối tượng lý tưởng:</p>
-              <p>E-learning thi cấp Quốc Gia, Trường học quốc tế xây dựng học liệu dùng chung lâu dài.</p>
-            </div>
-            <button onclick="openBookingModal('elearning', 'el_g3')" class="w-full bg-purple-950 hover:bg-rose-600 text-white py-2.5 rounded-xl font-bold text-xs transition-colors flex items-center justify-center space-x-1 cursor-pointer">
-              <span>Chọn Gói Dịch Vụ</span>
-              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-            </button>
-          </div>
-        </div>
 
         <!-- Sáng kiến kinh nghiệm (Emerald Theme) -->
         <div class="service-card skkn bg-emerald-50/50 border border-emerald-250 ring-2 ring-emerald-400/10 rounded-2xl p-6 flex flex-col justify-between transition-all hover:shadow-xl relative">
