@@ -10,21 +10,77 @@ export default function ServicesSection({ onSelectPackage }: ServicesSectionProp
   const [activeFilter, setActiveFilter] = useState<"all" | ServiceType>("all");
 
   // Calculator states
-  const [calcService, setCalcService] = useState<ServiceType>("powerpoint");
-  const [calcSubOption, setCalcSubOption] = useState<string>("ppt_g2"); // ppt_g1, ppt_g2, anime_2d, anime_3d, el_g1, el_g2, el_g3
+  const [calcService, setCalcService] = useState<ServiceType>("elearning");
+  const [calcSubOption, setCalcSubOption] = useState<string>("el_g2"); // ppt_g1, ppt_g2, anime_2d, anime_3d, el_g1, el_g2, el_g3
   const [calcQty, setCalcQty] = useState<number>(3); // slide slides, mins, or scenes
 
   const serviceCategories = [
     { id: "all", label: "Tất cả dịch vụ" },
+    { id: "elearning", label: "Thiết kế E-Learning" },
     { id: "powerpoint", label: "Thiết kế PowerPoint" },
     { id: "animation", label: "Phim Hoạt Hình" },
-    { id: "elearning", label: "Thiết kế E-Learning" },
     { id: "skkn", label: "Sáng kiến kinh nghiệm" },
     { id: "gvg", label: "Biện pháp & Báo cáo GVG" },
     { id: "app", label: "Thiết kế APP" }
   ];
 
   const packages = [
+    {
+      id: "el_g1",
+      category: "elearning",
+      name: "E-Learning Cơ Bản (Gói 1)",
+      price: 1500000,
+      unit: "Bài giảng",
+      description: "Tạo bản E-learning chuẩn quốc tế, phù hợp kiểm tra và nộp kho bài giảng, tương thích hoàn toàn các hệ thống LMS trường học.",
+      features: [
+        "Đồng bộ hóa lời giảng thuyết minh với nội dung trình văn",
+        "Tích hợp Quizz trắc nghiệm tương tác kiểm tra học sinh",
+        "Bàn giao trọn gói File nguồn PPT, định dạng HTML5 / SCORM",
+        "Xem trước giao điện dễ dàng",
+        "Chưa có ứng dụng AI vào bài giảng",
+      ],
+      revisions: "Hỗ trợ chỉnh sửa biên tập lỗi nhỏ chính tả miễn phí\n* Lưu ý chung: Giáo viên phải tự ghi âm, ghi hình để Maris Slide đồng bộ lời giảng khớp với hiệu ứng.",
+      targetUser: "Thầy cô cần nộp học liệu số định kỳ, có tích hợp Quiz cơ bản tương tác tốt.",
+      bgColor: "bg-white border border-gray-200",
+    },
+    {
+      id: "el_g2",
+      category: "elearning",
+      name: "E-Learning Phổ thông (Gói 2)",
+      price: 2000000,
+      unit: "Bài giảng",
+      description: "E-learning thế hệ mới bổ sung tương tác động, sửa lỗi toàn diên và thích ứng tối đa với trải nghiệm của học sinh.",
+      features: [
+        "Bao gồm toàn bộ quyền lợi Gói 1",
+        "Hỗ trợ chỉnh sửa nội dung chuyên sâu tới 5 lần",
+        "Thiết kế trò chơi phân vai trong E-learning",
+        "Đóng gói chuẩn Scorm 2004 / HTML5 tiện dụng đăng tải",
+        "Chưa có ứng dụng AI vào bài giảng",
+      ],
+      revisions: "Hỗ trợ sửa đổi và hiệu chỉnh nội dung 5 lần\n* Lưu ý chung: Giáo viên phải tự ghi âm, ghi hình để Maris Slide đồng bộ lời giảng khớp với hiệu ứng.",
+      targetUser: "Thầy cô nộp bài dự thi cấp Quận/Tỉnh, yêu cầu chỉnh sửa tỉ mỉ từ hội đồng giám khảo.",
+      bgColor: "bg-white border border-gray-200",
+    },
+    {
+      id: "el_g3",
+      category: "elearning",
+      name: "E-Learning Cao Cấp (Gói 3)",
+      price: 4000000,
+      unit: "Bài giảng",
+      description: "Gói chất lượng tốt nhất của dòng E-learning. Lên ý tưởng sư phạm, minigame và trợ lý AI chatbot hỗ trợ học viên.",
+      features: [
+        "Lên ý tưởng, kịch bản bài dạy từ A-Z",
+        "Kết hợp Mini game, APP AI tương tác đỉnh cao",
+        "Kết hợp APP chat bot hỗ trợ học viên",
+        "Video hoạt hình tình huống (Tổng thời lượng 2 phút)",
+        "Hình ảnh minh hoạ, phong cách thiết kế độc đáo",
+        "Hỗ trợ sửa đổi cao cấp tới 10 lần",
+      ],
+      revisions: "Hỗ trợ sửa đổi toàn diện 10 lần bất kể thay đổi bố cục\n* Lưu ý chung: Giáo viên phải tự ghi âm, ghi hình để Maris Slide đồng bộ lời giảng khớp với hiệu ứng.",
+      targetUser: "E-learning thi cấp Quốc Gia, Trường học quốc tế xây dựng học liệu dùng chung lâu dài.",
+      bgColor: "bg-purple-50/50 border border-purple-200 ring-2 ring-purple-500/10",
+      pill: "Giải pháp Đỉnh Cao Quốc Gia",
+    },
     {
       id: "ppt_g1",
       category: "powerpoint",
@@ -100,62 +156,6 @@ export default function ServicesSection({ onSelectPackage }: ServicesSectionProp
       revisions: "Chốt kịch bản kỹ trước khi làm. Không sửa kịch bản khi video đã đóng gói.",
       targetUser: "Đơn vị giáo dục số, giáo viên thiết kế bài thi quốc tế, trường mầm non quốc tế.",
       bgColor: "bg-white border border-gray-200",
-    },
-    {
-      id: "el_g1",
-      category: "elearning",
-      name: "E-Learning Cơ Bản (Gói 1)",
-      price: 1500000,
-      unit: "Bài giảng",
-      description: "Tạo bản E-learning chuẩn quốc tế, phù hợp kiểm tra và nộp kho bài giảng, tương thích hoàn toàn các hệ thống LMS trường học.",
-      features: [
-        "Đồng bộ hóa lời giảng thuyết minh với nội dung trình văn",
-        "Tích hợp Quizz trắc nghiệm tương tác kiểm tra học sinh",
-        "Bàn giao trọn gói File nguồn PPT, định dạng HTML5 / SCORM",
-        "Xem trước giao điện dễ dàng",
-        "Chưa có ứng dụng AI vào bài giảng",
-      ],
-      revisions: "Hỗ trợ chỉnh sửa biên tập lỗi nhỏ chính tả miễn phí\n* Lưu ý chung: Giáo viên phải tự ghi âm, ghi hình để Maris Slide đồng bộ lời giảng khớp với hiệu ứng.",
-      targetUser: "Thầy cô cần nộp học liệu số định kỳ, có tích hợp Quiz cơ bản tương tác tốt.",
-      bgColor: "bg-white border border-gray-200",
-    },
-    {
-      id: "el_g2",
-      category: "elearning",
-      name: "E-Learning Phổ thông (Gói 2)",
-      price: 2000000,
-      unit: "Bài giảng",
-      description: "E-learning thế hệ mới bổ sung tương tác động, sửa lỗi toàn diên và thích ứng tối đa với trải nghiệm của học sinh.",
-      features: [
-        "Bao gồm toàn bộ quyền lợi Gói 1",
-        "Hỗ trợ chỉnh sửa nội dung chuyên sâu tới 5 lần",
-        "Thiết kế trò chơi phân vai trong E-learning",
-        "Đóng gói chuẩn Scorm 2004 / HTML5 tiện dụng đăng tải",
-        "Chưa có ứng dụng AI vào bài giảng",
-      ],
-      revisions: "Hỗ trợ sửa đổi và hiệu chỉnh nội dung 5 lần\n* Lưu ý chung: Giáo viên phải tự ghi âm, ghi hình để Maris Slide đồng bộ lời giảng khớp với hiệu ứng.",
-      targetUser: "Thầy cô nộp bài dự thi cấp Quận/Tỉnh, yêu cầu chỉnh sửa tỉ mỉ từ hội đồng giám khảo.",
-      bgColor: "bg-white border border-gray-200",
-    },
-    {
-      id: "el_g3",
-      category: "elearning",
-      name: "E-Learning Cao Cấp (Gói 3)",
-      price: 4000000,
-      unit: "Bài giảng",
-      description: "Gói chất lượng tốt nhất của dòng E-learning. Lên ý tưởng sư phạm, minigame và trợ lý AI chatbot hỗ trợ học viên.",
-      features: [
-        "Lên ý tưởng, kịch bản bài dạy từ A-Z",
-        "Kết hợp Mini game, APP AI tương tác đỉnh cao",
-        "Kết hợp APP chat bot hỗ trợ học viên",
-        "Video hoạt hình tình huống (Tổng thời lượng 2 phút)",
-        "Hình ảnh minh hoạ, phong cách thiết kế độc đáo",
-        "Hỗ trợ sửa đổi cao cấp tới 10 lần",
-      ],
-      revisions: "Hỗ trợ sửa đổi toàn diện 10 lần bất kể thay đổi bố cục\n* Lưu ý chung: Giáo viên phải tự ghi âm, ghi hình để Maris Slide đồng bộ lời giảng khớp với hiệu ứng.",
-      targetUser: "E-learning thi cấp Quốc Gia, Trường học quốc tế xây dựng học liệu dùng chung lâu dài.",
-      bgColor: "bg-purple-50/50 border border-purple-200 ring-2 ring-purple-500/10",
-      pill: "Giải pháp Đỉnh Cao Quốc Gia",
     },
     {
       id: "skkn_word",
